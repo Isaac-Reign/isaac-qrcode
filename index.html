@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- {% load static %} -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QR code generator">
+    <meta name="keywords" content="qrcode, qr generator">
+    <title>QR code Generator</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="max-width">
+                <div class="text-x">Free QR code Generator</div>
+                <a class="logo" href="">isaac.qrcode.com</a>
+            </div>
+        </header>
+
+        <nav>
+            <div class="nav-container">
+                <!-- <div>
+                    <a href="{% url 'saved' %}" id="save-section" class="menu a">Download-later</a>
+
+                    {% if not request.user.is_authenticated %}
+                    <a href="{% url 'user_accounts' %}" class="menu a">Login</a>
+                    {% else %}
+                    <a href="#" class="menu" style="position: relative; top: 25px">Hello {{request.user}}</a>
+                    <a href="#" class="menu">Hello {{request.user}}</a>
+
+                    <a href="{% url 'logout_user' %}" class="menu a">Logout</a><br>
+                    {% endif %}
+                </div> -->
+                <a target="_blank" rel="noopener noreferrer" href="https://isaac-portfolio.onrender.com" id="menu-section" class="menu">About developer</a>
+            </div>
+        </nav><br><br>
+        <h3 class="title t1" style="text-align: center; margin: 8px 0;">QR code allows smart phones to access your website, phone num. adress, etc, easily</h3>
+        <h3 style="text-align: center; margin-bottom: 25px;" class="title t1">Past in Address, Phone number or URL</h3>
+        <br>
+        <main>
+            <form id="generated" method="POST" enctype="multipart/form-data">
+                <!-- {% csrf_token %} -->
+                <div class="image-box">
+                    <img src="./images/loading.gif" class="w1" alt="inline-loading">
+                    <div id="qrcode"></div>
+                </div>
+                <input type="text" name="url_name" hidden id="name">
+                <textarea name="url_source" hidden id="source"></textarea>
+                <input type="" name="url_size" hidden id="size2">
+            </form>
+
+            <form action="" class="generate-form">
+                <div class="card">
+                    <div style="margin-right: 13px;">
+                        <label for="url">Enter sources:</label>
+                        <input id="url" type="text" placeholder="Enter or Past url..." required>
+                    </div>
+                    <div class="select">
+                        <label for="size">width & height (size):</label>
+                        <select name="" id="size">
+                        <option value="100">100X100. x-small</option>
+                        <option value="200">200X200. small</option>
+                        <option value="300" selected>300X300. Normal</option>
+                        <option value="400">400X400. x-Normal</option>
+                        <option value="500">500X500. Large</option>
+                        <option value="600">600X600. x-Large</option>
+                        <option value="700">700X700. xx-Large</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="card">
+                <!-- <label for="url_name" id="url_name">source name (optional):</label> -->
+                <!-- <input type="text" id="url_name" placeholder="e.g. Google.com or my_contact."> -->
+                </div>
+                <div class="btns">
+                    <button type="submit">Generate</button>
+                    <input type="reset" value="Reset">
+                </div>
+            </form>
+
+        </main>
+
+        <div class="show-case">
+            <div class="article">
+                <h2 class="title">How it work</h2>
+                <p>Enter or past in the URL, click on <span>Generate</span> when you are done. You do not nedd to <span>login</span> or <span>register</span></p>
+                <p>It will generate the QR code image in .png format, you can decide to download the image by clicking on the <span>download</span> button.</p>
+                <p>You can also click on <span>download-later</span>, this will save the image into your account, which you can download it later, you can also delete it from you account. But to perform
+                   these functionalities you must <span>login</span> if you have account or <span>register</span> if you don't</p>
+                <p>The Width and Height (size) will affect when you download it on your device.</p>
+                <p>The <span>website name</span> which is optional, but some how important, because when you add it to <span>download later</span>, the name will help you identify them if you have save multiple. And also when you download it the <span>websie name</span> will help you identify them, when you have download multiple.</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <footer>
+        <p>
+           <!--  <h2>Let Explore The World</h2>
+            <h2>The name is Isaac Reign</h2>
+            <h2><a href=""> My portforlio website</a></h2> -->
+            <div>@ Copy right 2022, All right reserve.</div>
+        </p>
+    </footer>
+    <script src="./js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>
