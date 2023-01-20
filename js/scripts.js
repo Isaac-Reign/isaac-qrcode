@@ -27,7 +27,7 @@ const onGenerateSubmit = (e) => {
                     generateQRCode(url, size);
 
                     setTimeout(() => {
-                        form.classList.add('generate-form-toggler');
+                        // form.classList.add('generate-form-toggler');
                         saveURL = qr.querySelector('img').src;
                         createSaveBtn(saveURL);
 
@@ -77,20 +77,21 @@ const createSaveBtn = (saveURL) => {
 
 
     const link2 = document.createElement('button');
-    link2.classList = 'download-btn add-database';
-    link2.innerHTML = "";
-    link2.type = "submit";
-    link2.name = 'data_base';
-    link2.style.pointerEvents = "none";
+    // link2.classList = 'download-btn add-database';
+    // link2.innerHTML = "";
+    // link2.type = "submit";
+    // link2.name = 'data_base';
+    // link2.style.pointerEvents = "none";
+    // generated.appendChild(link2);
+    
     generated.appendChild(link);
-    generated.appendChild(link2);
 
 }
 
 //ADD TO DATA BASE
 
-function addToDataBase(name, source, size){
-    document.getElementById('name').value = name;
-    document.getElementById('source').value = source;
-    document.getElementById('size2').value = size;
-}
+// function addToDataBase(name, source, size){
+//     document.getElementById('name').value = name;
+//     document.getElementById('source').value = source;
+//     document.getElementById('size2').value = size;
+// }
