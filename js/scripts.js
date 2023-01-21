@@ -6,13 +6,12 @@ const qr = document.getElementById('qrcode');
 
 const onGenerateSubmit = (e) => {
     e.preventDefault()
-    qr.innerHTML = '';
-    const saveLinke = document.querySelector('.download-btn');
-    const saveLinke2 = document.querySelector('.add-database');
+    clearUI()
 
-    if (saveLinke || saveLinke2) {
+    const saveLinke = document.querySelector('.download-btn');
+
+    if (saveLinke) {
         saveLinke.remove()
-        saveLinke2.remove()
     }
     const url = document.getElementById('url').value;
     const size = document.getElementById('size').value;
@@ -25,7 +24,7 @@ const onGenerateSubmit = (e) => {
             hideSpiner()
                 try{
                     generateQRCode(url, size);
-
+// 
                     setTimeout(() => {
                         // form.classList.add('generate-form-toggler');
                         saveURL = qr.querySelector('img').src;
@@ -88,6 +87,10 @@ const createSaveBtn = (saveURL) => {
 
 }
 
+const clearUI = () => {
+    qr.innerHTML = '';
+
+}
 //ADD TO DATA BASE
 
 // function addToDataBase(name, source, size){
