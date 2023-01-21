@@ -40,7 +40,7 @@ const onGenerateSubmit = (e) => {
                         window.location.reload()
                     }
                 }
-        }, 100)
+        }, 1000)
 
     }
 }
@@ -69,11 +69,11 @@ const hideSpiner = () => {
 
 const createSaveBtn = (saveURL) => {
     const link = document.createElement('a');
-    link.download = 'qrcode';
+    link.download = 'isaac-qrcode.onrender.com';
     link.classList = 'download-btn';
     link.href = saveURL;
     link.innerHTML = "Download Image";
-    generated = document.getElementById('generated');
+    // generated = document.getElementById('generated');
 
 
     const link2 = document.createElement('button');
